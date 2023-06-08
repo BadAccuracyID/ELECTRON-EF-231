@@ -1,3 +1,4 @@
+const {globalShortcut} = require('electron')
 const {app, BrowserWindow} = require('electron')
 
 const createWindow = () => {
@@ -10,5 +11,8 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
-    createWindow();
-})
+    // quit shortcut
+    globalShortcut.register('CommandOrControl+W', () => {
+        app.quit();
+    });
+}).then(createWindow)
