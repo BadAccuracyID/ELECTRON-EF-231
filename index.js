@@ -70,6 +70,15 @@ menu.append(new MenuItem({
                 // go to login page
                 win.loadURL('http://localhost:3000/auth/logout')
             }
+        },
+        {
+            label: 'Developer Tools',
+            role: 'ToggleDevTools',
+            accelerator: process.platform === 'darwin' ? 'Cmd+Shift+I' : 'Ctrl+Shift+I',
+            click: () => {
+                // Open dev tools
+                BrowserWindow.getFocusedWindow().toggleDevTools()
+            }
         }
     ]
 }))
