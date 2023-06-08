@@ -14,6 +14,12 @@ const createWindow = () => {
 
 const dockMenu = Menu.buildFromTemplate([
     {
+        label: 'About',
+        click() {
+            createAboutWindow()
+        }
+    },
+    {
         label: 'Log out',
         click() {
             // go to login page
@@ -21,15 +27,15 @@ const dockMenu = Menu.buildFromTemplate([
         }
     },
     {
-        label: 'About',
-        click() {
-            createAboutWindow()
-        }
-    },
-    {
         label: 'Reload',
         click() {
             BrowserWindow.getFocusedWindow().webContents.reload()
+        }
+    },
+    {
+        label: 'Developer Tools',
+        click() {
+            BrowserWindow.getFocusedWindow().toggleDevTools()
         }
     }
 ])
