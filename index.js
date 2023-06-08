@@ -19,6 +19,18 @@ const dockMenu = Menu.buildFromTemplate([
             // go to login page
             win.loadURL('http://localhost:3000/auth/logout')
         }
+    },
+    {
+        label: 'About',
+        click() {
+            createAboutWindow()
+        }
+    },
+    {
+        label: 'Reload',
+        click() {
+            BrowserWindow.getFocusedWindow().webContents.reload()
+        }
     }
 ])
 
