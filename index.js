@@ -6,7 +6,8 @@ let win = null
 const createWindow = () => {
     win = new BrowserWindow({
         width: 1920,
-        height: 1080
+        height: 1080,
+        icon: './images/Silvoam Logo EF.png',
     })
 
     win.loadURL('http://localhost:3000/')
